@@ -1,0 +1,14 @@
+# Publish only the student pack.
+# Everything else in this folder stays on your machine.
+
+# Ignore all instructor / local files at the repo root
+/*
+!.gitignore
+!README.md
+!student/
+!student/**
+
+# Never publish generated Word files or Office lock files
+*.docx
+~$*
+.DS_Store
