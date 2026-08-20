@@ -1,0 +1,42 @@
+---
+description: Course rails for the AI Building Intensive — stack, design, secrets, and scope
+alwaysApply: true
+---
+
+# Workshop rails
+
+You are building a student prototype for a 3-day workshop. Follow these rails on every change.
+
+## Stack
+
+Use Next.js (App Router) + React + TypeScript + Tailwind + shadcn/ui. Deploy on Vercel. Neon (Postgres, from Vercel Storage) and OpenAI come later — do not add them unless the student or `PRD.md` explicitly asks.
+
+Do not switch to Vite, Python, Expo/React Native, or a second database (no Supabase, Firebase, Mongo).
+
+## Data (before APIs and Neon)
+
+Put seed records in `data/*.json`, using the field names in `PRD.md`. The core flow must run with no `.env`, no Neon, no OpenAI, and no third-party API.
+
+Do not connect to a database at import time or during `next build`. If `DATABASE_URL` and `POSTGRES_URL` are both unset, show the seed JSON / localStorage path — **never throw**. A missing database must not fail the Vercel build or crash the first page load.
+
+Keep user-created items in **localStorage** until a database is added. Do not write a JSON file on the server — that breaks on Vercel.
+
+When Neon is connected, reuse the same field names and persist for real. Do not leave mock or hard-coded stand-in data in place.
+
+## Design
+
+Follow `DESIGN.md` exactly. Do not invent a new visual style, color palette, or type system.
+
+If `PRD.md` needs a chart, use shadcn Chart (Recharts). Do not add a charting library otherwise. Do not use Chart.js, Tremor, or Nivo.
+
+## Secrets
+
+Put `DATABASE_URL` or `POSTGRES_URL`, OpenAI keys, and any other secrets in `.env` only. Never commit `.env`. Treat either database URL as valid (Vercel/Neon may set one or both).
+
+Call third-party APIs, the database, and OpenAI only from server code (Route Handlers or Server Actions) — never from client components or the browser. Do this even when the API has no key: it avoids CORS failures and keeps the same habit you’ll use for Neon and OpenAI. Put any key or config (lat/lon, country code) in `.env`.
+
+## Scope
+
+Build only what `PRD.md` asks for. Do not add auth, payments, email, file uploads, extra pages, or extra libraries unless a P0 requirement needs them.
+
+If something is unclear, ask before assuming.
