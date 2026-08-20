@@ -24,4 +24,4 @@ If you cannot decide, use **Harbor**.
 
 ## See them side by side
 
-Open `gallery/index.html` in a browser. Same workshop homepage, one tab per look.
+Open `design-preview/index.html` in a browser. Same workshop homepage, one tab per look.
