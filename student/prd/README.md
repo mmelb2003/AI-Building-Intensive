@@ -13,6 +13,6 @@ Two files to copy into your app project.
 2. Fill in at least sections 1–4. Keep it to about one page — bullets and tables, not paragraphs.
 3. Tell Cursor:
 
-> Read `PRD.md` and `DESIGN.md`. Follow the workshop rule. Use local JSON in `data/` for now — no database or API keys. Ask me any clarifying questions first, then build the smallest version that tests the riskiest assumption in section 3.
+> Read `PRD.md` and `DESIGN.md`. Follow the workshop rule. Use local JSON in `data/` for now — no database or API keys. Ask me any clarifying questions first, then build the smallest working version of the P0 must-haves in section 4, following the build order.
 
 If you don't have your own idea, copy `PRD-Example-Loop.md` instead, pick the **Harbor** design system, and run the same prompt.

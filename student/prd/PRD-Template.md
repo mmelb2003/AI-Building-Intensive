@@ -9,7 +9,7 @@
 > - **Every requirement gets an acceptance criterion** the agent (or you) can actually check.
 > - Mark anything you're guessing with **`[ASSUMPTION]`** — don't invent facts or numbers.
 > - Save this file in your project as `PRD.md`, then tell Cursor:
->   *"Read `PRD.md` and `DESIGN.md`. Follow the workshop rule. Use local JSON in `data/` for now — no database or API keys. Ask me any clarifying questions first, then build the smallest version that tests the riskiest assumption in section 3."*
+>   *"Read `PRD.md` and `DESIGN.md`. Follow the workshop rule. Use local JSON in `data/` for now — no database or API keys. Ask me any clarifying questions first, then build the smallest working version of the P0 must-haves in section 4, following the build order."*
 >
 > *Sections map to the **Lean Product Process**: target customer → underserved needs → value → MVP feature set.*
 

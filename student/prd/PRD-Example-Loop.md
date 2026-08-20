@@ -4,7 +4,7 @@
 
 > **Worked example — read this to see what "good" looks like, or use it as your backup project.**
 > This is a complete PRD written against the workshop template. If you don't have your own idea, copy this into your project as `PRD.md`, pick the **Harbor** design system, and tell Cursor:
-> *"Read `PRD.md` and `DESIGN.md`. Follow the workshop rule. Use local JSON in `data/` for now — no database or API keys. Ask me any clarifying questions first, then build the smallest version that tests the riskiest assumption in section 3."*
+> *"Read `PRD.md` and `DESIGN.md`. Follow the workshop rule. Use local JSON in `data/` for now — no database or API keys. Ask me any clarifying questions first, then build the smallest working version of the P0 must-haves in section 4, following the build order."*
 
 ---
 
