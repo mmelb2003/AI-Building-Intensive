@@ -1,6 +1,6 @@
 # Cursor pack
 
-One file that keeps the agent on the rails. Copy it into your app on Day 1 — same idea as `DESIGN.md`.
+One file that keeps the agent on the rails. Copy it into your app — same idea as `DESIGN.md`.
 
 You do not need to understand “rules” yet. Just put the file in the right place.
 
@@ -19,5 +19,3 @@ If creating the folder feels fiddly, paste this instead:
 ## What’s in the file (for later)
 
 The agent will always: use the course stack (Next.js + Vercel), follow `DESIGN.md`, start from local JSON in `data/` (no database or API keys yet), call third-party APIs and keep secrets on the server (never from the browser), and build only what your PRD asks for.
-
-On Day 3 you’ll learn what a rule is — and add one of your own.

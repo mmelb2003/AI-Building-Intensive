@@ -1,6 +1,6 @@
 # Student pack
 
-Everything you need before and during Day 1.
+Everything you need to set up your project and start building.
 
 | File | What it is |
 |------|------------|

@@ -1,6 +1,6 @@
 # PRD
 
-Two files to copy into your app project on Day 1.
+Two files to copy into your app project.
 
 | File | What it is |
 |------|------------|
