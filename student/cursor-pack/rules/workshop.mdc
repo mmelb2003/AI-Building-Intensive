@@ -7,36 +7,70 @@ alwaysApply: true
 
 You are building a student prototype for a 3-day workshop. Follow these rails on every change.
 
+Put every new file where `.cursor/rules/folders.mdc` says. Do not use `src/`.
+Do not create a folder until it has a real file.
+
 ## Stack
 
 Use Next.js (App Router) + React + TypeScript + Tailwind + shadcn/ui. Deploy on Vercel. Neon (Postgres, from Vercel Storage) and OpenAI come later — do not add them unless the student or `PRD.md` explicitly asks.
 
 Do not switch to Vite, Python, Expo/React Native, or a second database (no Supabase, Firebase, Mongo).
 
+If the folder is not already a Next.js app, scaffold it first (non-interactive):
+
+`npx create-next-app@latest . --ts --tailwind --eslint --app --no-src-dir --import-alias "@/*" --use-npm --yes`
+
+Then add shadcn (non-interactive — do not run `init` without `-d`; it will hang on prompts):
+
+`npx shadcn@latest init -d`
+
+Install only the primitives the PRD needs, usually:
+
+`npx shadcn@latest add button card input label -y`
+
+Do not hand-roll those primitives. Style them with the design tokens in `app/globals.css` (applied from the student's `DESIGN.md`). Add a chart only if `PRD.md` asks — then use shadcn Chart (Recharts).
+
 ## Data (before APIs and Neon)
 
-Put seed records in `data/*.json`, using the field names in `PRD.md`. The core flow must run with no `.env`, no Neon, no OpenAI, and no third-party API.
+Every student project uses the same persistence path. Only the object names and fields change — those come from `PRD.md`.
 
-Do not connect to a database at import time or during `next build`. If `DATABASE_URL` and `POSTGRES_URL` are both unset, show the seed JSON / localStorage path — **never throw**. A missing database must not fail the Vercel build or crash the first page load.
+1. **Seed** — put sample records in `data/*.json`, named after the object (`data/recipes.json`, `data/feedback.json`). Use the field names in `PRD.md`. The app must look populated on first run.
+2. **New items** — write user-created records to **localStorage**. Merge seed + localStorage when rendering lists. Do this until Neon is added.
+3. **Neon (later)** — same field names, now shared across devices. Replace localStorage writes; do not leave a second store in place.
 
-Keep user-created items in **localStorage** until a database is added. Do not write a JSON file on the server — that breaks on Vercel.
+The core flow must run with no Neon, no OpenAI, and no third-party API. An empty `.env` from the course template is fine — do not require a key for the first build.
 
-When Neon is connected, reuse the same field names and persist for real. Do not leave mock or hard-coded stand-in data in place.
+Do not write a JSON file on the server — that looks fine on a laptop and breaks on Vercel. Do not add a memory store, a `lib/db.ts` switch, Supabase, or Neon unless the student or `PRD.md` explicitly asks.
+
+Do not connect to a database at import time or during `next build`. If `DATABASE_URL` and `POSTGRES_URL` are both unset, keep using seed JSON + localStorage — **never throw**. A missing database must not fail the Vercel build or crash the first page load.
 
 ## Design
 
-Follow `DESIGN.md` exactly. Do not invent a new visual style, color palette, or type system.
+`DESIGN.md` at the app root is the only place that defines the look. Follow it exactly. Do not invent a new visual style, color palette, or type system. Do not use Chart.js, Tremor, or Nivo. Do not pick or rename a look in `PRD.md`, specs, or chat — read `DESIGN.md`.
 
-If `PRD.md` needs a chart, use shadcn Chart (Recharts). Do not add a charting library otherwise. Do not use Chart.js, Tremor, or Nivo.
+After `npx shadcn@latest init -d`, apply that look's tokens into `app/globals.css`: replace the values inside `:root { ... }` using the Apply steps in `DESIGN.md` (and the matching `themes/*.css` from the student pack if the student still has it). Keep imports, `@theme`, and the base layer.
+
+Use semantic utilities only (`bg-background`, `bg-primary`, `text-muted-foreground`, `border-border`, `rounded-lg`, etc.). Never hardcode hex, rgb, or one-off Tailwind palette colors (`bg-blue-600`) in product UI. To change the brand later, edit tokens in `:root` — do not restyle `components/ui/` or scatter new colors through pages.
 
 ## Secrets
 
-Put `DATABASE_URL` or `POSTGRES_URL`, OpenAI keys, and any other secrets in `.env` only. Never commit `.env`. Treat either database URL as valid (Vercel/Neon may set one or both).
+Put secrets in `.env` only. Never commit `.env`. Students start from the course `.env.example` (copy to `.env` in the app root).
 
-Call third-party APIs, the database, and OpenAI only from server code (Route Handlers or Server Actions) — never from client components or the browser. Do this even when the API has no key: it avoids CORS failures and keeps the same habit you’ll use for Neon and OpenAI. Put any key or config (lat/lon, country code) in `.env`.
+**OpenAI (when `PRD.md` asks for it):**
+- The only OpenAI env var is `OPENAI_API_KEY`.
+- Hardcode the model as `"gpt-4o-mini"` in `lib/openai.ts` (or the call site). Do not add `OPENAI_MODEL` or any other model env var.
+- Read the key only from server code. Never use `NEXT_PUBLIC_*` for secrets.
+
+**Neon (later):** Put `DATABASE_URL` or `POSTGRES_URL` in `.env`. Treat either as valid (Vercel/Neon may set one or both).
+
+Call third-party APIs, the database, and OpenAI only from server code (Route Handlers or Server Actions) — never from client components or the browser. Do this even when the API has no key: it avoids CORS failures and keeps the same habit you’ll use for Neon and OpenAI. Put any key or config (lat/lon, country code) in `.env` — not the OpenAI model name.
 
 ## Scope
 
-Build only what `PRD.md` asks for. Do not add auth, payments, email, file uploads, extra pages, or extra libraries unless a P0 requirement needs them.
+**Product scope** lives in `PRD.md`. Build only what it asks for. Do not add auth, payments, email, file uploads, extra pages, or extra libraries unless a P0 requirement needs them.
+
+**Delivery scope** lives in `specs/` once that folder exists. After the first screen works, each change should follow the active spec (`building`) and the index in `specs/README.md`. Do not invent slices the PRD does not support. Do not block the first build on writing a spec — create `specs/` and `HANDOFF.md` after something is on screen (see `folders.mdc`).
+
+When a spec and the PRD disagree, the PRD wins on *what the product is*; amend the spec (change log) if the slice was wrong. When code and a shipped spec disagree, amend the spec or fix the code — say which.
 
 If something is unclear, ask before assuming.

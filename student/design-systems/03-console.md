@@ -4,6 +4,16 @@ Dark, precise, a little technical. Near-black screen, one cyan accent, mono for 
 
 **Use this when:** developer tools, analytics, logs, ops, anything that should feel sharp and focused.
 
+## Apply (once)
+
+1. Copy this file into your app as `DESIGN.md`.
+2. After shadcn init, paste the token values from `themes/console.css` into the `:root { ... }` block in `app/globals.css` (replace the default token values; keep the rest of the file). Console is dark on `:root` — no `.dark` class required.
+3. Tell Cursor: *Follow `DESIGN.md`. Use theme tokens only (`bg-primary`, `text-muted-foreground`). Do not hardcode colors.*
+
+## Tweak (optional)
+
+Change a hex in `app/globals.css` `:root` — e.g. `--primary` — and the whole app updates. Do not invent new colors inside components. Optional: load JetBrains Mono for labels/IDs via `next/font`.
+
 ## Colors
 - Background: `#0B1220`
 - Surface / cards: `#151C2C`

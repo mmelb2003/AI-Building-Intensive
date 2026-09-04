@@ -1,27 +1,23 @@
 # Pick a look for your app
 
-Choose **one** of the five design files below. Copy it into your project as `DESIGN.md`. Then tell Cursor:
+Everything for looks lives in **this folder**.
 
-> Build this app using the design system in DESIGN.md.
+1. Open `index.html` in a browser and click tabs until you like one.
+2. Copy that look’s `.md` into **your app** as `DESIGN.md`.
+3. After shadcn init, paste tokens from the matching `themes/*.css` into `app/globals.css` `:root`.
 
-These are short style guides we wrote for class. They are plain text. No download or install needed.
+**Inside your app, `DESIGN.md` is the only source of truth for the look.** Do not restate Harbor / Studio / etc. in `PRD.md` or specs.
 
-| File | Name | Feel | Best for |
-|------|------|------|----------|
-| `01-harbor.md` | **Harbor** | Clean blue SaaS, lots of space | Tools, dashboards, work apps |
-| `02-studio.md` | **Studio** | Warm paper, serif headlines | Stories, education, local services |
-| `03-console.md` | **Console** | Dark screen, cyan accent | Dev tools, data, “serious product” |
-| `04-garden.md` | **Garden** | Soft sage, rounded, friendly | Health, community, consumer apps |
-| `05-signal.md` | **Signal** | White, black, one orange, sharp edges | Archives, research, lists, catalogs |
-
-## How to use (2 minutes)
-
-1. Open the file you like and skim it (30 seconds).
-2. Copy the whole file into your project and **rename it** `DESIGN.md`.
-3. In Cursor, include: *“Follow DESIGN.md exactly. Do not invent a new visual style.”*
+| Guide | Theme tokens | Name | Feel | Best for |
+|------|--------------|------|------|----------|
+| `01-harbor.md` | `themes/harbor.css` | **Harbor** | Clean blue SaaS, lots of space | Tools, dashboards, work apps |
+| `02-studio.md` | `themes/studio.css` | **Studio** | Warm paper, serif headlines | Stories, education, local services |
+| `03-console.md` | `themes/console.css` | **Console** | Dark screen, cyan accent | Dev tools, data, “serious product” |
+| `04-garden.md` | `themes/garden.css` | **Garden** | Soft sage, rounded, friendly | Health, community, consumer apps |
+| `05-signal.md` | `themes/signal.css` | **Signal** | White, black, one orange, sharp edges | Archives, research, lists, catalogs |
 
 If you cannot decide, use **Harbor**.
 
-## See them side by side
+## Want to change the look later?
 
-Open `design-system-preview/index.html` in a browser. Same workshop homepage, one tab per look.
+Edit hex values in `app/globals.css` `:root` (for example `--primary`). Save. The UI should update without rewriting components.

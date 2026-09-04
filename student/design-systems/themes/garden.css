@@ -1,0 +1,52 @@
+/*
+  Garden — design tokens for shadcn/ui
+
+  After `npx shadcn@latest init -d`, open app/globals.css and replace the
+  token values inside `:root { ... }` with the block below. Keep the rest
+  of the file (imports, @theme, base layer).
+
+  Fonts (optional): Plus Jakarta Sans or Nunito in app/layout.tsx (next/font).
+  Radius is large; primary buttons should feel pill-like (rounded-full is OK
+  when DESIGN.md asks for it).
+
+  To change the look later: edit a value here once. Do not hardcode colors
+  in components — use bg-primary, text-muted-foreground, etc.
+*/
+
+:root {
+  --radius: 1rem;
+
+  --background: #f4f7f2;
+  --foreground: #1f2a1c;
+
+  --card: #ffffff;
+  --card-foreground: #1f2a1c;
+
+  --popover: #ffffff;
+  --popover-foreground: #1f2a1c;
+
+  --primary: #3f6f4a;
+  --primary-foreground: #ffffff;
+
+  --secondary: #ffffff;
+  --secondary-foreground: #3f6f4a;
+
+  --muted: #e7f0e3;
+  --muted-foreground: #5e6b59;
+
+  --accent: #e7f0e3;
+  --accent-foreground: #3f6f4a;
+
+  --destructive: #b4534b;
+  --destructive-foreground: #ffffff;
+
+  --border: #d7e0d2;
+  --input: #d7e0d2;
+  --ring: #3f6f4a;
+
+  --chart-1: #3f6f4a;
+  --chart-2: #5e6b59;
+  --chart-3: #b4534b;
+  --chart-4: #335a3c;
+  --chart-5: #1f2a1c;
+}

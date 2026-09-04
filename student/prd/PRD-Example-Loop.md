@@ -3,8 +3,8 @@
 **Author:** Workshop example  ·  **Date:** 2026-08-16  ·  **Version:** 1.0
 
 > **Worked example — read this to see what "good" looks like, or use it as your backup project.**
-> This is a complete PRD written against the workshop template. If you don't have your own idea, copy this into your project as `PRD.md`, pick the **Harbor** design system, and tell Cursor:
-> *"Read `PRD.md` and `DESIGN.md`. Follow the workshop rule. Use local JSON in `data/` for now — no database or API keys. Ask me any clarifying questions first, then build the smallest working version of the P0 must-haves in section 4, following the build order."*
+> This is a complete PRD written against the workshop template. If you don't have your own idea, copy this into your project as `PRD.md`, copy a look into `DESIGN.md` (this example assumes Harbor), and tell Cursor:
+> *"Read `PRD.md` and `DESIGN.md`. Follow the workshop rule. Seed from local JSON in `data/`; put new items in localStorage. No database or API keys yet. Do not write a JSON file on the server. Ask me any clarifying questions first, then build the smallest working version of the P0 must-haves in section 4, following the build order."*
 
 ---
 
@@ -48,7 +48,7 @@
 | R5 | Edit / override a tag when the AI is wrong | P1 | Changing an item's theme updates the dashboard counts immediately. |
 | R6 | Simple sign-in so only my team sees the board | P2 | A signed-out visitor cannot see any feedback. |
 
-**Build order:** 1) `data/feedback.json` + submit/list →  2) dashboard from that JSON →  3) AI tagging on submit →  4) filters, overrides. Neon and OpenAI come later — do not add them in the first build.
+**Build order:** 1) `data/feedback.json` + submit/list (new items in localStorage) →  2) dashboard from that data →  3) AI tagging on submit →  4) filters, overrides. Neon and OpenAI come later — do not add them in the first build.
 
 **Explicitly NOT in v1 (non-goals):**
 - No automatic import from email / Zendesk / surveys — paste or manual entry only.
@@ -59,18 +59,18 @@
 **Do NOT change / keep working:** *(empty — this is the first build.)*
 
 ## 5. Data Model
-- **Feedback** — start in `data/feedback.json` (8–10 pre-tagged samples). Fields: `id`, `text`, `customer_name` (optional), `source` (optional), `theme`, `sentiment`, `created_at`. Relates to: none in v1. Same field names become the Neon table later.
+- **Feedback** — seed in `data/feedback.json` (8–10 pre-tagged samples). New items go in localStorage until Neon. Do not write the JSON file on the server. Fields: `id`, `text`, `customer_name` (optional), `source` (optional), `theme`, `sentiment`, `created_at`. Relates to: none in v1. Same field names become the Neon table later.
 - **Theme set (fixed in code for v1):** Pricing · Onboarding · Performance · Bug · Feature Request · Support · Other.
 - **Example record:** `{ "id": "1", "text": "I got lost during signup and never finished.", "customer_name": "Ava", "theme": "Onboarding", "sentiment": "negative", "created_at": "2026-08-01T12:00:00Z" }`
 
 ## 6. Guidance on User Experience
 - **Main user flow:** 1) open the board → 2) click **Add feedback** → 3) paste text and submit → 4) the item appears, already tagged → 5) open the **Dashboard** → 6) click a theme to see its items.
 - **Error / empty states:** An empty board shows "No feedback yet — add your first item." If AI tagging fails, save the item as **Untagged** and let the user tag it manually — never lose a submission.
-- **Visual aesthetic:** Follow the design system in `DESIGN.md` (**Harbor** — clean white SaaS, one brand blue, cards, simple top nav).
+- **Visual aesthetic:** Follow `DESIGN.md` (this example assumes Harbor).
 
 ## 7. Guidance on Tech Stack / Components
-- **Stack:** Next.js + React + Tailwind CSS + shadcn/ui; start on `data/feedback.json` + localStorage; **Neon** and **OpenAI** later; deploy on **Vercel**.
-- **Must-use:** When keys exist, keep the OpenAI key and `DATABASE_URL` in `.env` — never in client-side code, never committed to GitHub.
+- **Stack:** Next.js + React + Tailwind CSS + shadcn/ui; seed from `data/feedback.json`, new items in localStorage; **Neon** and **OpenAI** later; deploy on **Vercel**.
+- **Must-use:** When keys exist, keep only `OPENAI_API_KEY` (and later `DATABASE_URL`) in `.env` — never in client-side code, never committed to GitHub. Hardcode the OpenAI model as `gpt-4o-mini` in `lib/openai.ts` — do not put the model in `.env`.
 - **Must-avoid (product-specific):** No paid third-party feedback APIs. No modal dialog for adding feedback — use a simple inline panel or a dedicated page.
 
 ## 8. Other Info & Open Questions

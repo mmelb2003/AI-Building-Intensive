@@ -4,6 +4,16 @@ Soft, friendly, calm. Sage and cream, rounded corners, gentle cards. Feels like 
 
 **Use this when:** health, wellness, community, family, volunteering, anything human and low-stress.
 
+## Apply (once)
+
+1. Copy this file into your app as `DESIGN.md`.
+2. After shadcn init, paste the token values from `themes/garden.css` into the `:root { ... }` block in `app/globals.css` (replace the default token values; keep the rest of the file).
+3. Tell Cursor: *Follow `DESIGN.md`. Use theme tokens only (`bg-primary`, `text-muted-foreground`). Do not hardcode colors. Pill-shaped primary buttons are OK.*
+
+## Tweak (optional)
+
+Change a hex in `app/globals.css` `:root` — e.g. `--primary` — and the whole app updates. Do not invent new colors inside components. Optional: load Plus Jakarta Sans via `next/font`.
+
 ## Colors
 - Background: `#F4F7F2`
 - Surface / cards: `#FFFFFF`

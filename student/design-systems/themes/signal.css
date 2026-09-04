@@ -1,0 +1,50 @@
+/*
+  Signal — design tokens for shadcn/ui
+
+  After `npx shadcn@latest init -d`, open app/globals.css and replace the
+  token values inside `:root { ... }` with the block below. Keep the rest
+  of the file (imports, @theme, base layer).
+
+  Radius is 0 — sharp corners everywhere. Prefer hairline borders over shadows.
+
+  To change the look later: edit a value here once. Do not hardcode colors
+  in components — use bg-primary, text-muted-foreground, etc.
+*/
+
+:root {
+  --radius: 0rem;
+
+  --background: #fafafa;
+  --foreground: #000000;
+
+  --card: #ffffff;
+  --card-foreground: #000000;
+
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+
+  --primary: #ff6600;
+  --primary-foreground: #ffffff;
+
+  --secondary: #ffffff;
+  --secondary-foreground: #000000;
+
+  --muted: #f0f0f0;
+  --muted-foreground: #666666;
+
+  --accent: #f0f0f0;
+  --accent-foreground: #000000;
+
+  --destructive: #8b1a1a;
+  --destructive-foreground: #ffffff;
+
+  --border: #dddddd;
+  --input: #dddddd;
+  --ring: #ff6600;
+
+  --chart-1: #ff6600;
+  --chart-2: #2d6a4f;
+  --chart-3: #666666;
+  --chart-4: #e85a00;
+  --chart-5: #000000;
+}

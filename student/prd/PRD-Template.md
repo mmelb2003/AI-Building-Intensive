@@ -9,7 +9,7 @@
 > - **Every requirement gets an acceptance criterion** the agent (or you) can actually check.
 > - Mark anything you're guessing with **`[ASSUMPTION]`** — don't invent facts or numbers.
 > - Save this file in your project as `PRD.md`, then tell Cursor:
->   *"Read `PRD.md` and `DESIGN.md`. Follow the workshop rule. Use local JSON in `data/` for now — no database or API keys. Ask me any clarifying questions first, then build the smallest working version of the P0 must-haves in section 4, following the build order."*
+>   *"Read `PRD.md` and `DESIGN.md`. Follow the workshop rule. Seed from local JSON in `data/`; put new items in localStorage. No database or API keys yet. Do not write a JSON file on the server. Ask me any clarifying questions first, then build the smallest working version of the P0 must-haves in section 4, following the build order."*
 >
 > *Sections map to the **Lean Product Process**: target customer → underserved needs → value → MVP feature set.*
 
@@ -58,7 +58,7 @@
 
 *(P0 = must ship for v1 · P1 = should · P2 = nice-to-have.)*
 
-**Build order** (agents do best in sequence): 1) local JSON in `data/` →  2) core action →  3) UI →  4) extras. Neon, APIs, and OpenAI come in later class sessions — do not add them now.
+**Build order** (agents do best in sequence): 1) seed JSON in `data/` + localStorage for new items →  2) core action →  3) UI →  4) extras. Neon, APIs, and OpenAI come in later class sessions — do not add them now.
 
 **Explicitly NOT in v1 (non-goals):**
 - …
@@ -70,18 +70,20 @@
 ## 5. Data Model *(optional)*
 *What objects/records must the app store, with key fields and how they relate? These names are the JSON now and the Neon table later — keep them stable.*
 
-- **[Object]** — fields: … · start in `data/[object].json` · relates to: …
-- **[Object]** — fields: … · start in `data/[object].json` · relates to: …
+**Persistence (every project, until Neon):** seed samples in `data/[object].json` · new items in localStorage · do not write a JSON file on the server (that breaks on Vercel) · same field names when Neon is added later.
+
+- **[Object]** — fields: … · seed in `data/[object].json` · relates to: …
+- **[Object]** — fields: … · seed in `data/[object].json` · relates to: …
 
 ## 6. Guidance on User Experience *(optional)*
 - **Main user flow** (4–7 steps, first visit → core value): 1 → 2 → 3 …
 - **Error / empty states:** *e.g., "show an inline message with a retry button; never a blank screen."*
-- **Visual aesthetic:** *Follow the design system in `DESIGN.md`* (pick one from `design-systems/` — Harbor, Studio, Console, Garden, Signal).
+- **Visual aesthetic:** Follow `DESIGN.md` (the look you copied into the app). Do not name a palette here.
 
 ## 7. Guidance on Tech Stack / Components *(optional)*
 *Pick the product. The workshop rule already locks the stack, secrets, and scope. Add only don'ts that are about **this** product.*
 
-- **Course default:** Next.js + React + Tailwind + shadcn/ui, deploy on Vercel. Start on local JSON in `data/`. Neon and OpenAI come later.
+- **Course default:** Next.js + React + Tailwind + shadcn/ui, deploy on Vercel. Seed from local JSON in `data/`; new items in localStorage. Neon and OpenAI come later. When OpenAI is added: only `OPENAI_API_KEY` in `.env`; hardcode model `gpt-4o-mini` in code.
 - **My preferences / must-use:**
 - **Must-avoid** (product-specific): *e.g., "no modals for the main action," "no paid third-party APIs."*
 

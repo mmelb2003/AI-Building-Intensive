@@ -8,6 +8,6 @@ Course materials for **Part 1: Rapid prototyping with AI**.
 2. Choose **Download ZIP**.
 3. Unzip the folder.
 
-Then open `student/design-system-preview/index.html` in Chrome to pick a look. Your instructor will send the pre-work checklist separately.
+Then open `student/design-systems/index.html` in Chrome to pick a look.
 
 Full instructions: [`student/README.md`](student/README.md)

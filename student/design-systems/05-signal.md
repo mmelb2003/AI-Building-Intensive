@@ -4,6 +4,16 @@ Bare and exact. Near-white, plain black type, one orange, 1px hairlines, no roun
 
 **Use this when:** collections, research, lists, libraries, wikis, anything that should feel honest and un-designed.
 
+## Apply (once)
+
+1. Copy this file into your app as `DESIGN.md`.
+2. After shadcn init, paste the token values from `themes/signal.css` into the `:root { ... }` block in `app/globals.css` (replace the default token values; keep the rest of the file). `--radius` is `0` — keep corners sharp.
+3. Tell Cursor: *Follow `DESIGN.md`. Use theme tokens only (`bg-primary`, `text-muted-foreground`). Do not hardcode colors. No rounded corners.*
+
+## Tweak (optional)
+
+Change a hex in `app/globals.css` `:root` — e.g. `--primary` — and the whole app updates. Do not invent new colors inside components.
+
 ## Colors
 - Background: `#FAFAFA`
 - Surface / cards: `#FFFFFF`
