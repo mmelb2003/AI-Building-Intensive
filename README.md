@@ -26,6 +26,7 @@ There is a student pack in this workspace (`.zip` or unzipped folder). This fold
    - `student/cursor-pack/rules/` → `.cursor/rules/`
    - `student/cursor-pack/skills/spec-writing/` → `.cursor/skills/spec-writing/`
    - `student/cursor-pack/skills/session-handoff/` → `.cursor/skills/session-handoff/`
+   - `student/cursor-pack/skills/pre-build-review/` → `.cursor/skills/pre-build-review/`
    - `student/.env.example` → `.env`
    - `student/prd/PRD-Template.md` → `PRD.md`
    - `student/specs/_template.md` → `specs/_template.md`

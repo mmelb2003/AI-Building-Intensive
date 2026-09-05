@@ -73,6 +73,27 @@ Use EARS for event-, state-, and failure-driven boxes. Five patterns
 Example: *WHEN a submitted email is malformed, THE form SHALL return
 a 400 with an inline error and SHALL NOT create a record.*
 
+Hollow (do not write these) — the agent cannot grade them, and neither can
+the human reviewer:
+
+- "The page loads without errors."
+- "The feature works correctly."
+- "No console errors."
+
+Checkable — a click, a type, or a refresh with a visible result:
+
+- WHEN the user submits a new item THE list SHALL show it within 2s.
+- IF the required field is blank THEN THE form SHALL show an inline
+  message and SHALL NOT create a record.
+- WHEN the user refreshes after adding an item THE list SHALL still
+  include that item (seed + localStorage until a later store exists).
+- IF there are no items THEN THE list SHALL show a short empty-state
+  message and SHALL NOT render a blank page.
+
+If the slice persists user-created records, takes form input, or shows
+a list, include one box for each of those three cases (or `n/a` with a
+one-line reason). These are the cases that break demos.
+
 Prefer **SHALL** (must) for done criteria. Use SHOULD only for
 non-blocking quality intent, and say so. Do not write MAY into a
 checkbox — that is out of scope or a nice-to-have dependency.

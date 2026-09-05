@@ -60,6 +60,8 @@ Recommended opener for the human’s next chat:
   both or say which is authoritative and align them.
 - Handoff is **last** in precedence (§ 11). Never use it to override
   `workshop.mdc` or `PRD.md`.
+- The wrap message the student sees is product-shaped (what shipped,
+  what to do next). Do not narrate the course or a "later session."
 
 ---
 
@@ -74,5 +76,7 @@ Recommended opener for the human’s next chat:
 
 - Not for writing a spec or updating `specs/README.md` alone (use
   `spec-writing`).
+- Not for a pre-build second opinion on a PRD or spec (use
+  `pre-build-review`).
 - Not for rewriting `PRD.md` or `DESIGN.md`.
 - Not for commits, PRs, or starting the next build without a wrap.

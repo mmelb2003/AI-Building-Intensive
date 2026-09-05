@@ -10,4 +10,6 @@ End of a session:
 
 > Wrap up this session. Update `HANDOFF.md` so the next agent can pick up cleanly.
 
+Optional, before a build: new chat → **Opus** → `Review this PRD before we build.` (or `Review this spec before we build.`).
+
 Loop examples in `prd/`, `specs/`, and `handoff/` stay in this pack — read them, do not copy them unless you are building Loop.

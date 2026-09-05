@@ -106,6 +106,8 @@ How to write stories, EARS done criteria, constraints, and open questions:
 - Cite the project rule file and section, not a principle ("log
   carefully").
 - After any status change, update `specs/README.md` in the same turn.
+- Specs the student will read stay in product language. "Do not add
+  OpenAI" is fine. "Workshop constraint v1" / "later session" is not.
 
 ---
 
@@ -122,6 +124,8 @@ How to write stories, EARS done criteria, constraints, and open questions:
 ## What this skill is not for
 
 - Not for writing or rewriting a PRD / strategy doc.
+- Not for a pre-build second opinion on a PRD or spec (use
+  `pre-build-review`).
 - Not for commit messages, PR descriptions, or session handoffs
   (use the `session-handoff` skill to wrap a session).
 - Not for a one-line bugfix or refactor that does not change the contract.

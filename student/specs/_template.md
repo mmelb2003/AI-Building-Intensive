@@ -26,7 +26,7 @@ before? Name the screen, list, or artifact in the words they will see.]
 
 ## 3. Surfaces
 
-Concrete paths this spec adds or materially touches. Workshop tree — no `src/`.
+Concrete paths this spec adds or materially touches. Project tree — no `src/`.
 
 - Routes: `[/path]`
 - Components: `components/…`
@@ -38,11 +38,20 @@ Concrete paths this spec adds or materially touches. Workshop tree — no `src/`
 
 Independently verifiable. 5–12 boxes. Write these first. Event, state,
 and failure boxes use EARS: WHEN / WHILE / IF … THE [system] SHALL.
-Include at least one unwanted-behavior box (empty state, bad input, outage).
 
-- [ ] [Most important check — load a URL or run a command]
-- [ ] [WHEN / IF … THE [system] SHALL …]
-- [ ] [Unwanted behavior / empty / malformed input]
+Name the three cases that break demos. At least one box for each that
+this slice owns (or `n/a — this slice does not persist / take input /
+have a list`):
+
+- empty / first-visit state
+- bad or blank input
+- refresh (seed + localStorage still shows what the user just added)
+
+- [ ] [Happy path — load a URL, do the main action, see the result]
+- [ ] WHEN [user does the core action] THE [system] SHALL [observable result]
+- [ ] IF [list or board is empty] THEN THE [system] SHALL [show a short message — never a blank screen]
+- [ ] IF [required field is blank or malformed] THEN THE [system] SHALL [inline error] and SHALL NOT [create a record]
+- [ ] WHEN [the user refreshes after adding an item] THE [system] SHALL [still show that item]
 - [ ] `npm run build` succeeds
 
 ## 5. Constraints (must NOT)
@@ -87,7 +96,7 @@ localStorage for new items until Neon. Do not invent a second store.
 
 ## 10. Domain & quality guardrails
 
-Standing workshop rules that apply **to this slice**. Cite the file.
+Standing project rules that apply **to this slice**. Cite the file.
 
 - Stack and secrets: `.cursor/rules/workshop.mdc`
 - Folders: `.cursor/rules/folders.mdc`
@@ -98,6 +107,7 @@ Standing workshop rules that apply **to this slice**. Cite the file.
 
 - `npm run build` succeeds (dev server not required)
 - Manual: load `http://localhost:3000[path]` on desktop and a phone-width window
+- Smoke: empty / first-visit state · blank or bad submit · add an item, refresh, confirm it stays
 - Walk every P0 acceptance criterion in `PRD.md` that this slice owns
 
 ## 12. Change log

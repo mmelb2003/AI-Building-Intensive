@@ -6,7 +6,8 @@
 > - Fill in **sections 1–4** (required). Sections **5–8** are optional but make the agent far more accurate.
 > - Keep it to about **one page**. Use bullets and tables, not paragraphs — agents parse structure better than prose.
 > - **Be specific and measurable.** Replace vague words ("nice", "intuitive", "fast") with numbers and observable behavior.
-> - **Every requirement gets an acceptance criterion** the agent (or you) can actually check.
+> - **Every requirement gets an acceptance criterion** you can click or type and see — not "it works" or "no console errors."
+> - **At least one P0 covers an unexpected case:** empty / first-visit state, blank or bad input, or refresh (the item you just added is still there).
 > - Mark anything you're guessing with **`[ASSUMPTION]`** — don't invent facts or numbers.
 > - This file is already `PRD.md` after bootstrap. Fill sections 1–4, then tell Cursor:
 >   *"Read `PRD.md` and `DESIGN.md`. Follow the workshop rule. Seed from local JSON in `data/`; put new items in localStorage. No database or API keys yet. Do not write a JSON file on the server. Ask me any clarifying questions first, then build the smallest working version of the P0 must-haves in section 4, following the build order."*
@@ -48,17 +49,17 @@
 - As a …, I want … so that …
 - As a …, I want … so that …
 
-**Must-haves for v1** — number them, set a priority, and give each a checkable acceptance criterion:
+**Must-haves for v1** — number them, set a priority, and give each a checkable acceptance criterion (a click-and-see result, not "it works"):
 
 | ID | Requirement | Priority | Acceptance criterion (observable / measurable) |
 |----|-------------|----------|------------------------------------------------|
-| R1 |  | P0 | e.g., "A new user completes signup in < 60s with no console errors." |
-| R2 |  | P0 |  |
-| R3 |  | P1 |  |
+| R1 |  | P0 | e.g., "Submit a new item → it appears in the list within 2s and is still there after refresh." |
+| R2 |  | P0 | e.g., "Submit with the main field blank → an inline message; no new item is created." |
+| R3 |  | P1 | e.g., "With no items yet, the list shows a short empty-state message — never a blank page." |
 
 *(P0 = must ship for v1 · P1 = should · P2 = nice-to-have.)*
 
-**Build order** (agents do best in sequence): 1) seed JSON in `data/` + localStorage for new items →  2) core action →  3) UI →  4) extras. Neon, APIs, and OpenAI come in later class sessions — do not add them now.
+**Build order** (agents do best in sequence): 1) seed JSON in `data/` + localStorage for new items →  2) core action →  3) UI →  4) extras. Do not add a database, third-party APIs, or OpenAI unless a requirement above needs them.
 
 **Explicitly NOT in v1 (non-goals):**
 - …
@@ -81,9 +82,9 @@
 - **Visual aesthetic:** Follow `DESIGN.md` (the look you copied into the app). Do not name a palette here.
 
 ## 7. Guidance on Tech Stack / Components *(optional)*
-*Pick the product. The workshop rule already locks the stack, secrets, and scope. Add only don'ts that are about **this** product.*
+*Pick the product. The project rule already locks the stack, secrets, and scope. Add only don'ts that are about **this** product.*
 
-- **Course default:** Next.js + React + Tailwind + shadcn/ui, deploy on Vercel. Seed from local JSON in `data/`; new items in localStorage. Neon and OpenAI come later. When OpenAI is added: only `OPENAI_API_KEY` in `.env`; hardcode model `gpt-4o-mini` in code.
+- **Course default:** Next.js + React + Tailwind + shadcn/ui, deploy on Vercel. Seed from local JSON in `data/`; new items in localStorage. When OpenAI is in the PRD: only `OPENAI_API_KEY` in `.env`; hardcode model `gpt-4o-mini` in code.
 - **My preferences / must-use:**
 - **Must-avoid** (product-specific): *e.g., "no modals for the main action," "no paid third-party APIs."*
 

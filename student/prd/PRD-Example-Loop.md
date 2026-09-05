@@ -48,7 +48,7 @@
 | R5 | Edit / override a tag when the AI is wrong | P1 | Changing an item's theme updates the dashboard counts immediately. |
 | R6 | Simple sign-in so only my team sees the board | P2 | A signed-out visitor cannot see any feedback. |
 
-**Build order:** 1) `data/feedback.json` + submit/list (new items in localStorage) →  2) dashboard from that data →  3) AI tagging on submit →  4) filters, overrides. Neon and OpenAI come later — do not add them in the first build.
+**Build order:** 1) `data/feedback.json` + submit/list (new items in localStorage) →  2) dashboard from that data →  3) AI tagging on submit →  4) filters, overrides. Do not add a database or OpenAI in the first build.
 
 **Explicitly NOT in v1 (non-goals):**
 - No automatic import from email / Zendesk / surveys — paste or manual entry only.
@@ -69,7 +69,7 @@
 - **Visual aesthetic:** Follow `DESIGN.md` (this example assumes Harbor).
 
 ## 7. Guidance on Tech Stack / Components
-- **Stack:** Next.js + React + Tailwind CSS + shadcn/ui; seed from `data/feedback.json`, new items in localStorage; **Neon** and **OpenAI** later; deploy on **Vercel**.
+- **Stack:** Next.js + React + Tailwind CSS + shadcn/ui; seed from `data/feedback.json`, new items in localStorage; deploy on **Vercel**. Add OpenAI only when tagging is in scope; add Neon only when shared persistence is in scope.
 - **Must-use:** When keys exist, keep only `OPENAI_API_KEY` (and later `DATABASE_URL`) in `.env` — never in client-side code, never committed to GitHub. Hardcode the OpenAI model as `gpt-4o-mini` in `lib/openai.ts` — do not put the model in `.env`.
 - **Must-avoid (product-specific):** No paid third-party feedback APIs. No modal dialog for adding feedback — use a simple inline panel or a dedicated page.
 

@@ -1,5 +1,5 @@
 ---
-description: Course rails for the AI Building Intensive — stack, design, secrets, and scope
+description: Course rails for the AI Building Intensive — stack, design, secrets, scope. Follow silently; talk in product terms.
 alwaysApply: true
 ---
 
@@ -9,6 +9,21 @@ You are building a student prototype for a 3-day workshop. Follow these rails on
 
 Put every new file where `.cursor/rules/folders.mdc` says. Do not use `src/`.
 Do not create a folder until it has a real file.
+
+## Student-facing voice
+
+Follow these rails silently. Students are building their product, not studying the workshop.
+
+In chat, UI copy, code comments, and files they will treat as their work (`PRD.md` they filled, specs, the live app):
+
+- Speak in product terms: screens, objects, and actions from `PRD.md`.
+- Do not mention the workshop, the course, class sessions, Day 1/2/3, "later session," "workshop constraint," "course rails," or "v1 stand-in."
+- Do not explain a missing database, API, or model as something that "comes later" in class. If they ask why there is no database or why tagging is not a model, say what the app does now (new items stay in the browser; themes come from the words in the item) and ask whether they want to add that next.
+- Do not name the technique you used as pedagogy (tag-matching, template explanations, "no OpenAI yet," "LLM narration later"). Describe the behavior the user will see.
+- Do not apologize that this version is fake or temporary.
+
+Allowed: follow every rail below; ask product questions; say what the screen will do.
+If they ask how the course is structured, answer in one sentence and return to their product.
 
 ## Stack
 

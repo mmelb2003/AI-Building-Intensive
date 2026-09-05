@@ -17,5 +17,9 @@ Once something is on screen, tell Cursor:
 
 > Write spec 001 for the slice that is already on screen. Follow the spec-writing skill. Use `specs/_template.md`. Seed from local JSON in `data/`; put new items in localStorage. No database or API keys yet.
 
+**Optional — second opinion before the next build.** Open a **new chat**, switch to **Opus** (or another high-reasoning model), and say:
+
+> Review this spec before we build.
+
 Each spec is one capability (`001-feedback-submit-list`, `002-theme-dashboard`).
 The index in `specs/README.md` is the build log. Do not edit `PRD.md` to record what shipped.
