@@ -30,6 +30,12 @@ Install only the primitives the PRD needs, usually:
 
 Do not hand-roll those primitives. Style them with the design tokens in `app/globals.css` (applied from the student's `DESIGN.md`). Add a chart only if `PRD.md` asks — then use shadcn Chart (Recharts).
 
+Leave `AGENTS.md` and `CLAUDE.md` if Next created them. `next dev` rewrites them if you delete them.
+
+When you build the first real screen, **replace** the create-next-app starter page. Do not keep `bg-zinc-50`, `dark:`, or hardcoded hex from that template. Product UI uses Harbor tokens only (`bg-background`, `bg-primary`, `text-muted-foreground`).
+
+If `package.json` name is `_next` or `next-tmp`, rename it to the project folder name.
+
 ## Data (before APIs and Neon)
 
 Every student project uses the same persistence path. Only the object names and fields change — those come from `PRD.md`.
@@ -69,7 +75,7 @@ Call third-party APIs, the database, and OpenAI only from server code (Route Han
 
 **Product scope** lives in `PRD.md`. Build only what it asks for. Do not add auth, payments, email, file uploads, extra pages, or extra libraries unless a P0 requirement needs them.
 
-**Delivery scope** lives in `specs/` once that folder exists. After the first screen works, each change should follow the active spec (`building`) and the index in `specs/README.md`. Do not invent slices the PRD does not support. Do not block the first build on writing a spec — create `specs/` and `HANDOFF.md` after something is on screen (see `folders.mdc`).
+**Delivery scope** lives in `specs/` once that folder exists. Bootstrap may already have put `specs/_template.md`, `specs/README.md`, and `HANDOFF.md` in the app — leave those files; do not write spec 001 or fill the handoff until a screen is on and the student asks. After the first screen works, each change should follow the active spec (`building`) and the index in `specs/README.md`. Do not invent slices the PRD does not support. Do not block the first build on writing a spec.
 
 When a spec and the PRD disagree, the PRD wins on *what the product is*; amend the spec (change log) if the slice was wrong. When code and a shipped spec disagree, amend the spec or fix the code — say which.
 

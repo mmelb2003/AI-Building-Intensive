@@ -11,13 +11,13 @@ This zip is a **crate**, not your app. Do not open this folder as the project yo
 
 > Read `README.md` inside the zip (or unzipped pack) in this folder. Follow it exactly. This folder is my app.
 
-Keep a copy of the pack in Downloads. You will copy `specs/` and `handoff/` from it after the first screen works.
+After setup: fill `PRD.md` sections 1–4, then use the prompt already in that file.
 
 ## Agent — do exactly this
 
 There is a student pack in this workspace (`.zip` or unzipped folder). This folder is the app.
 
-**Do not invent a product. Do not add features, APIs, OpenAI, Neon, specs, or a handoff. Do not git clone.**
+**Do not invent a product. Do not add features, APIs, OpenAI, or Neon. Do not write spec 001. Do not git clone.**
 
 1. Unzip if needed. Find `student/`.
 2. Copy only:
@@ -28,15 +28,22 @@ There is a student pack in this workspace (`.zip` or unzipped folder). This fold
    - `student/cursor-pack/skills/session-handoff/` → `.cursor/skills/session-handoff/`
    - `student/.env.example` → `.env`
    - `student/prd/PRD-Template.md` → `PRD.md`
+   - `student/specs/_template.md` → `specs/_template.md`
+   - `student/specs/README-seed.md` → `specs/README.md`
+   - `student/handoff/HANDOFF-Template.md` → `HANDOFF.md`
 3. Scaffold the Next.js shell in a subfolder so you do not fight existing files, then move it up:
 
    `npx create-next-app@latest _next --ts --tailwind --eslint --app --no-src-dir --import-alias "@/*" --use-npm --yes`
 
-   Move `_next/` contents into this folder without overwriting `DESIGN.md`, `PRD.md`, `.env`, `.cursor/`, or `themes/`. Delete `_next`.
-4. `npx shadcn@latest init -d`
-5. `npx shadcn@latest add button card input label -y`
-6. Paste tokens from `themes/harbor.css` into `app/globals.css` `:root`. Keep imports, `@theme`, and the base layer.
-7. **Delete** the zip and the extracted pack from this project. Do not leave `student/` here.
-8. List what you created. **Stop.**
+   Move `_next/` contents into this folder without overwriting `DESIGN.md`, `PRD.md`, `HANDOFF.md`, `.env`, `.cursor/`, `themes/`, or `specs/`. Delete `_next`.
+4. If `package.json` name is `_next` or `next-tmp`, set it to the folder name.
+5. `npx shadcn@latest init -d`
+6. `npx shadcn@latest add button card input label -y`
+7. Paste tokens from `themes/harbor.css` into `app/globals.css` `:root`. Keep imports, `@theme`, and the base layer.
+8. Leave `AGENTS.md` and `CLAUDE.md` if Next created them. Do not delete them — `next dev` puts them back.
+9. **Delete** the zip and the extracted pack from this project. Do not leave `student/` here.
+10. List what you created. **Stop.**
 
 Look is Harbor. To rebrand later, change hex values in `DESIGN.md` and `app/globals.css` `:root`. Do not add a second design file.
+
+Do not copy Loop examples (`PRD-Example-Loop.md`, `Spec-Example-Loop.md`, `HANDOFF-Example-Loop.md`) unless the student is building Loop.

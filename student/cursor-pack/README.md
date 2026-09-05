@@ -6,5 +6,5 @@ Copied into the app during bootstrap (`README.md` at the repo root). Do not copy
 |------|------------------------|
 | `rules/workshop.mdc` | Course stack, Harbor in `DESIGN.md`, seed JSON + localStorage, secrets in `.env`, OpenAI model `gpt-4o-mini` hardcoded |
 | `rules/folders.mdc` | Where new files go. No `src/`. |
-| `skills/spec-writing/` | One spec per slice after the first screen |
+| `skills/spec-writing/` | One spec per slice after the first screen (templates are already in the app) |
 | `skills/session-handoff/` | Update `HANDOFF.md` at wrap |
