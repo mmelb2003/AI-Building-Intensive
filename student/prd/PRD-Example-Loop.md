@@ -3,7 +3,7 @@
 **Author:** Workshop example  ·  **Date:** 2026-08-16  ·  **Version:** 1.0
 
 > **Worked example — read this to see what "good" looks like, or use it as your backup project.**
-> This is a complete PRD written against the workshop template. If you don't have your own idea, copy this into your project as `PRD.md`, copy a look into `DESIGN.md` (this example assumes Harbor), and tell Cursor:
+> This is a complete PRD written against the workshop template. If you don't have your own idea, copy this into your project as `PRD.md` (look stays `DESIGN.md` / Harbor), and tell Cursor:
 > *"Read `PRD.md` and `DESIGN.md`. Follow the workshop rule. Seed from local JSON in `data/`; put new items in localStorage. No database or API keys yet. Do not write a JSON file on the server. Ask me any clarifying questions first, then build the smallest working version of the P0 must-haves in section 4, following the build order."*
 
 ---

@@ -15,6 +15,6 @@ Two files to copy into your app project.
 
 > Read `PRD.md` and `DESIGN.md`. Follow the workshop rule. Seed from local JSON in `data/`; put new items in localStorage. No database or API keys yet. Do not write a JSON file on the server. Ask me any clarifying questions first, then build the smallest working version of the P0 must-haves in section 4, following the build order.
 
-If you don't have your own idea, copy `PRD-Example-Loop.md` instead and run the same prompt. The look still comes only from `DESIGN.md` (the Loop example was written assuming Harbor — use that if you want to match the write-up).
+If you don't have your own idea, copy `PRD-Example-Loop.md` instead and run the same prompt. The look is `DESIGN.md` (Harbor unless you changed the tokens).
 
 After the first screen works, start a spec (see `specs/README.md`). Do not record what shipped by editing this PRD.

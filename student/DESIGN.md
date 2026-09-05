@@ -2,17 +2,13 @@
 
 Clean, professional SaaS. White canvas, one blue, lots of air. Looks like a modern work tool.
 
-**Use this when:** dashboards, internal tools, booking, productivity, anything that should feel trustworthy.
+`DESIGN.md` is the only look. To change it later, edit hex values here and in `app/globals.css` `:root` (for example `--primary`). Do not add a second design file.
 
 ## Apply (once)
 
-1. Copy this file into your app as `DESIGN.md`.
-2. After shadcn init, paste the token values from `themes/harbor.css` into the `:root { ... }` block in `app/globals.css` (replace the default token values; keep the rest of the file).
-3. Tell Cursor: *Follow `DESIGN.md`. Use theme tokens only (`bg-primary`, `text-muted-foreground`). Do not hardcode colors.*
+After shadcn init, paste the token values from `themes/harbor.css` into the `:root { ... }` block in `app/globals.css`. Keep imports, `@theme`, and the base layer.
 
-## Tweak (optional)
-
-Change a hex in `app/globals.css` `:root` — e.g. `--primary` — and the whole app updates. Do not invent new colors inside components.
+Tell Cursor: *Follow `DESIGN.md`. Use theme tokens only (`bg-primary`, `text-muted-foreground`). Do not hardcode colors.*
 
 ## Colors
 - Background: `#FFFFFF`

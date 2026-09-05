@@ -16,9 +16,9 @@ Use Next.js (App Router) + React + TypeScript + Tailwind + shadcn/ui. Deploy on 
 
 Do not switch to Vite, Python, Expo/React Native, or a second database (no Supabase, Firebase, Mongo).
 
-If the folder is not already a Next.js app, scaffold it first (non-interactive):
+If the folder is not already a Next.js app, scaffold it first (non-interactive). If the folder already has `DESIGN.md` / `.cursor/`, scaffold in `_next` and move the files up so you do not overwrite those:
 
-`npx create-next-app@latest . --ts --tailwind --eslint --app --no-src-dir --import-alias "@/*" --use-npm --yes`
+`npx create-next-app@latest _next --ts --tailwind --eslint --app --no-src-dir --import-alias "@/*" --use-npm --yes`
 
 Then add shadcn (non-interactive — do not run `init` without `-d`; it will hang on prompts):
 
@@ -46,9 +46,9 @@ Do not connect to a database at import time or during `next build`. If `DATABASE
 
 ## Design
 
-`DESIGN.md` at the app root is the only place that defines the look. Follow it exactly. Do not invent a new visual style, color palette, or type system. Do not use Chart.js, Tremor, or Nivo. Do not pick or rename a look in `PRD.md`, specs, or chat — read `DESIGN.md`.
+`DESIGN.md` at the app root is the only place that defines the look (Harbor, unless the student edited the tokens). Follow it exactly. Do not invent a new visual style, color palette, or type system. Do not add a second design file. Do not use Chart.js, Tremor, or Nivo. Do not pick or rename a look in `PRD.md`, specs, or chat — read `DESIGN.md`.
 
-After `npx shadcn@latest init -d`, apply that look's tokens into `app/globals.css`: replace the values inside `:root { ... }` using the Apply steps in `DESIGN.md` (and the matching `themes/*.css` from the student pack if the student still has it). Keep imports, `@theme`, and the base layer.
+After `npx shadcn@latest init -d`, apply Harbor tokens from `themes/harbor.css` into `app/globals.css`: replace the values inside `:root { ... }`. Keep imports, `@theme`, and the base layer. To rebrand, change hex in `:root` and `DESIGN.md`.
 
 Use semantic utilities only (`bg-background`, `bg-primary`, `text-muted-foreground`, `border-border`, `rounded-lg`, etc.). Never hardcode hex, rgb, or one-off Tailwind palette colors (`bg-blue-600`) in product UI. To change the brand later, edit tokens in `:root` — do not restyle `components/ui/` or scatter new colors through pages.
 
