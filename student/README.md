@@ -1,15 +1,17 @@
-# After the first screen
+# Student pack
 
-Bootstrap (root `README.md`) already put `PRD.md`, `specs/_template.md`, `specs/README.md`, and `HANDOFF.md` in the app. Do not copy this whole folder into the app.
+These files are copied into the app at bootstrap (root `README.md`). Do not open this folder as the app. Do not copy this folder by hand.
 
-Once something is on screen, tell Cursor:
+| In this pack | In the app |
+|---|---|
+| `DESIGN.md` | `DESIGN.md` |
+| `themes/harbor.css` | `themes/harbor.css` |
+| `cursor-pack/rules/` | `.cursor/rules/` |
+| `cursor-pack/skills/` | `.cursor/skills/` |
+| `.env.example` | `.env` |
+| `PRD-Template.md` | `PRD.md` |
+| `HANDOFF-Template.md` | `HANDOFF.md` |
+| `specs/_template.md` | `specs/_template.md` |
+| `specs/README-seed.md` | `specs/README.md` |
 
-> Write spec 001 for the slice that is already on screen. Follow the spec-writing skill. Use `specs/_template.md`.
-
-End of a session:
-
-> Wrap up this session. Update `HANDOFF.md` so the next agent can pick up cleanly.
-
-Optional, before a build: new chat → **Opus** → `Review this PRD before we build.` (or `Review this spec before we build.`).
-
-Loop examples in `prd/`, `specs/`, and `handoff/` stay in this pack — read them, do not copy them unless you are building Loop.
+Loop examples (`PRD-Example-Loop.md`, `specs/Spec-Example-Loop.md`, `HANDOFF-Example-Loop.md`) stay in the pack. Read them. Copy them only if you are building Loop.

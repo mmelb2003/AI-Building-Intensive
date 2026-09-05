@@ -62,12 +62,12 @@ read [`references/when-and-size.md`](references/when-and-size.md).
 3. **Write done criteria first.** They pull the rest of the spec into
    focus. Then fill every section of the template. If a section does
    not apply, write `n/a — <one-line reason>` — never delete the heading.
-4. **Create or update the files.** New project: copy
-   [`assets/_template.md`](assets/_template.md) to `specs/_template.md`
-   and [`assets/readme-seed.md`](assets/readme-seed.md) to
-   `specs/README.md`. New slice: copy the project template (or this
-   one) to `specs/NNN-kebab-name.md`, add the index row, set `planned`
-   or `building`.
+4. **Create or update the files.** Use the project's
+   `specs/_template.md` — bootstrap already put it there. Do not
+   invent a second template. New slice: copy that file to
+   `specs/NNN-kebab-name.md`, add the index row, set `planned` or
+   `building`. If `_template.md` is missing, copy headings from an
+   existing spec in `specs/`.
 5. **On ship or audit:** walk done criteria against the code, confirm
    the named surfaces exist, run the test plan. Drift is either a code
    change or a dated spec amendment — say which, then do that.
@@ -116,8 +116,7 @@ How to write stories, EARS done criteria, constraints, and open questions:
 - Size, when-to-write, pre-speccing: [`references/when-and-size.md`](references/when-and-size.md).
 - Status taxonomy, numbering, special files, overlays: [`references/status-and-files.md`](references/status-and-files.md).
 - Stories, done criteria, EARS, constraints, open questions: [`references/authoring.md`](references/authoring.md).
-- New slice file: copy [`assets/_template.md`](assets/_template.md).
-- New `specs/` folder: also copy [`assets/readme-seed.md`](assets/readme-seed.md).
+- New slice file: copy `specs/_template.md`.
 
 ---
 

@@ -7,9 +7,10 @@ or working in a repo that already has its own conventions.
 
 ## Project overlay (do this first)
 
-The skill's template is the **default**. The repo wins.
+The project's `specs/_template.md` is the **only** template. There is
+no second copy in this skill.
 
-1. If `specs/_template.md` exists, copy **that** for new slices. Extra
+1. Copy `specs/_template.md` for new slices. Extra
    sections the project requires (compliance, push tags, help-docs
    impact) stay. Do not strip them.
 2. If `.cursor/skills/spec-writing/SKILL.md` exists in the project and
@@ -23,8 +24,9 @@ The skill's template is the **default**. The repo wins.
 5. Never overwrite a project's `_template.md` or rewrite historical
    specs to the default section list.
 
-If `specs/` does not exist, seed it from this skill's assets and then
-follow the default.
+If `specs/_template.md` is missing, recreate it from an existing spec's
+headings. Do not invent a second template. Bootstrap should already
+have put `specs/_template.md` and `specs/README.md` in the app.
 
 ---
 

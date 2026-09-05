@@ -20,10 +20,12 @@ with them, **the handoff is wrong** — fix it to match.
 
 ## What the model should do
 
-1. **Find or create `HANDOFF.md`.** Prefer the app-root file. If missing,
-   copy [`assets/_template.md`](assets/_template.md) to `HANDOFF.md` and
-   fill § 1–3 from `PRD.md`, `DESIGN.md`, and `.cursor/rules/workshop.mdc`
-   before wrapping state. Do not invent a second handoff path.
+1. **Find or create `HANDOFF.md`.** Prefer the app-root file (bootstrap
+   already put it there). If missing, recreate the same sections listed
+   in [`references/what-to-update.md`](references/what-to-update.md)
+   and fill § 1–3 from `PRD.md`, `DESIGN.md`, and
+   `.cursor/rules/workshop.mdc` before wrapping state. Do not invent a
+   second handoff path or a second template file.
 2. **Gather truth from the repo, not memory alone.** Read `PRD.md` § 4,
    `specs/README.md` (if present), recent spec status, and what this
    session actually changed. Prefer files and the conversation over a
@@ -68,7 +70,6 @@ Recommended opener for the human’s next chat:
 ## On-demand resources
 
 - What to rewrite vs leave alone: [`references/what-to-update.md`](references/what-to-update.md).
-- Blank file: copy [`assets/_template.md`](assets/_template.md).
 
 ---
 

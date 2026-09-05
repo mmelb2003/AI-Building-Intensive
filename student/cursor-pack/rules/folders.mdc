@@ -39,8 +39,7 @@ Do not add a second utils tree. Do not put seed JSON in `public/`.
 Do not add `lib/db.ts` until Neon exists; then it replaces localStorage writes
 and keeps the same field names.
 
-Bootstrap may already have created `specs/_template.md`, `specs/README.md`,
+Bootstrap already created `specs/_template.md`, `specs/README.md`,
 and `HANDOFF.md`. Leave them. Do not write spec 001 or fill the handoff
-until the first P0 is on screen and the student asks. `.cursor/skills/`
-should already be present. `content/` and `tests/` wait until there is a
-file that belongs there.
+unless the student asks. `.cursor/skills/` should already be present.
+`content/` and `tests/` wait until there is a file that belongs there.

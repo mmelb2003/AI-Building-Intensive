@@ -24,6 +24,7 @@ In chat, UI copy, code comments, and files they will treat as their work (`PRD.m
 
 Allowed: follow every rail below; ask product questions; say what the screen will do.
 If they ask how the course is structured, answer in one sentence and return to their product.
+Do not assign the next class exercise. When the current ask is done, list what you did and stop. The instructor sets the pace.
 
 ## Stack
 
@@ -39,11 +40,15 @@ Then add shadcn (non-interactive — do not run `init` without `-d`; it will han
 
 `npx shadcn@latest init -d`
 
-Install only the primitives the PRD needs, usually:
+Install this starter kit (bootstrap already did):
 
-`npx shadcn@latest add button card input label -y`
+`npx shadcn@latest add button card input label textarea badge select checkbox separator -y`
 
-Do not hand-roll those primitives. Style them with the design tokens in `app/globals.css` (applied from the student's `DESIGN.md`). Add a chart only if `PRD.md` asks — then use shadcn Chart (Recharts).
+Do not hand-roll those primitives. Style them with the design tokens in `app/globals.css` (applied from the student's `DESIGN.md`).
+
+Need another shadcn primitive later (table, tabs, toast, chart)? Add it the same way: `npx shadcn@latest add <name> -y`. That is not an extra library. Do not hand-roll a substitute. Do not install all of shadcn. Do not add a second component library.
+
+Add a chart only if `PRD.md` asks — then use shadcn Chart (that installs Recharts). Do not add Recharts on its own. Do not use Chart.js, Tremor, or Nivo.
 
 Leave `AGENTS.md` and `CLAUDE.md` if Next created them. `next dev` rewrites them if you delete them.
 
@@ -88,9 +93,9 @@ Call third-party APIs, the database, and OpenAI only from server code (Route Han
 
 ## Scope
 
-**Product scope** lives in `PRD.md`. Build only what it asks for. Do not add auth, payments, email, file uploads, extra pages, or extra libraries unless a P0 requirement needs them.
+**Product scope** lives in `PRD.md`. Build only what it asks for. Do not add auth, payments, email, file uploads, extra pages, or extra libraries unless a P0 requirement needs them. More shadcn primitives are not extra libraries — add them when the screen needs them.
 
-**Delivery scope** lives in `specs/` once that folder exists. Bootstrap may already have put `specs/_template.md`, `specs/README.md`, and `HANDOFF.md` in the app — leave those files; do not write spec 001 or fill the handoff until a screen is on and the student asks. After the first screen works, each change should follow the active spec (`building`) and the index in `specs/README.md`. Do not invent slices the PRD does not support. Do not block the first build on writing a spec.
+**Delivery scope** lives in `specs/` once that folder exists. Bootstrap already put `specs/_template.md`, `specs/README.md`, and `HANDOFF.md` in the app — leave those files. Do not write spec 001 or fill the handoff unless the student asks. When a spec is `building`, follow it and the index in `specs/README.md`. Do not invent slices the PRD does not support. Do not block a build on writing a spec.
 
 When a spec and the PRD disagree, the PRD wins on *what the product is*; amend the spec (change log) if the slice was wrong. When code and a shipped spec disagree, amend the spec or fix the code — say which.
 

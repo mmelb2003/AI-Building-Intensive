@@ -2,14 +2,14 @@
 
 **Author:** [name]  ·  **Date:** [YYYY-MM-DD]  ·  **Version:** 0.1
 
-> **How to use this in the workshop**
+> **How to fill this file**
 > - Fill in **sections 1–4** (required). Sections **5–8** are optional but make the agent far more accurate.
 > - Keep it to about **one page**. Use bullets and tables, not paragraphs — agents parse structure better than prose.
 > - **Be specific and measurable.** Replace vague words ("nice", "intuitive", "fast") with numbers and observable behavior.
 > - **Every requirement gets an acceptance criterion** you can click or type and see — not "it works" or "no console errors."
 > - **At least one P0 covers an unexpected case:** empty / first-visit state, blank or bad input, or refresh (the item you just added is still there).
 > - Mark anything you're guessing with **`[ASSUMPTION]`** — don't invent facts or numbers.
-> - This file is already `PRD.md` after bootstrap. Fill sections 1–4, then tell Cursor:
+> - When you are ready to build, tell Cursor:
 >   *"Read `PRD.md` and `DESIGN.md`. Follow the workshop rule. Seed from local JSON in `data/`; put new items in localStorage. No database or API keys yet. Do not write a JSON file on the server. Ask me any clarifying questions first, then build the smallest working version of the P0 must-haves in section 4, following the build order."*
 >
 > *Sections map to the **Lean Product Process**: target customer → underserved needs → value → MVP feature set.*
